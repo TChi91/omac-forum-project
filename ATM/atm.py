@@ -2,7 +2,7 @@ money = 500
 request = 278
 if request > money:
     print "we can't give more than" + str(money)
-elif request < 0:
+elif request <= 0:
     print "request is not valide"
 else:
     while request > 0:
