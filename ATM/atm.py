@@ -1,5 +1,5 @@
 money = 500
-request = 275
+request = 278
 if request > money:
     print "we can't give more than" + str(money)
 elif request < 0:
@@ -22,6 +22,6 @@ else:
             print "give 5"
             request -= 5
 
-        elif request < 5:
+        else:
             print "give " + str(request)
             request -= request
