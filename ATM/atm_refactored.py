@@ -8,6 +8,7 @@ def withdraw(balance, request):
     elif request <= 0:
         print "request is not valide"
     else:
+        balance -= request
         while request > 0:
             if request >= 100:
                 print "give 100"
@@ -28,7 +29,6 @@ def withdraw(balance, request):
             else:
                 print "give " + str(request)
                 request -= request
-            balance -= request
     return balance
 
 

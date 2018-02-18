@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eea1bdca-54dc-43ad-a7a7-b1899621bcb0" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/ATM/atm_refactored.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/ATM/atm.py" afterPath="$PROJECT_DIR$/ATM/atm.py" />
+      <change beforePath="$PROJECT_DIR$/ATM/atm_refactored.py" afterPath="$PROJECT_DIR$/ATM/atm_refactored.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,8 +18,8 @@
       <file leaf-file-name="atm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ATM/atm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="705">
+              <caret line="47" column="19" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -27,8 +28,8 @@
       <file leaf-file-name="atm_refactored.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ATM/atm_refactored.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+            <state relative-caret-position="60">
+              <caret line="4" column="47" lean-forward="true" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -50,8 +51,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/atm.py" />
-        <option value="$PROJECT_DIR$/ATM/atm.py" />
         <option value="$PROJECT_DIR$/ATM/atm_refactored.py" />
+        <option value="$PROJECT_DIR$/ATM/classes.py" />
+        <option value="$PROJECT_DIR$/ATM/atm.py" />
       </list>
     </option>
   </component>
@@ -165,16 +167,36 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <list size="3">
+    <configuration name="classes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ATM" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="OMAC-forum" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ATM/classes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.atm" />
       <item index="1" class="java.lang.String" itemvalue="Python.atm (1)" />
       <item index="2" class="java.lang.String" itemvalue="Python.atm_refactored" />
+      <item index="3" class="java.lang.String" itemvalue="Python.classes" />
     </list>
     <recent_temporary>
-      <list size="3">
+      <list size="4">
         <item index="0" class="java.lang.String" itemvalue="Python.atm_refactored" />
-        <item index="1" class="java.lang.String" itemvalue="Python.atm (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.atm" />
+        <item index="1" class="java.lang.String" itemvalue="Python.classes" />
+        <item index="2" class="java.lang.String" itemvalue="Python.atm (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python.atm" />
       </list>
     </recent_temporary>
   </component>
@@ -236,16 +258,24 @@
     <entry file="file://$PROJECT_DIR$/atm.py" />
     <entry file="file://$PROJECT_DIR$/ATM/atm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="705">
+          <caret line="47" column="19" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ATM/classes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="48" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ATM/atm_refactored.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        <state relative-caret-position="60">
+          <caret line="4" column="47" lean-forward="true" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
           <folding />
         </state>
       </provider>
