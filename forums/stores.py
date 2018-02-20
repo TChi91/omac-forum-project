@@ -27,14 +27,11 @@ class MemberStore:
             MemberStore.members.remove(member)
             print "Member Deleted with success"
 
-
     def entity_exists(self, member):
         result = True
         if self.get_by_id(member.id) is None:
             result = False
         return result
-
-
 
 
 class PostStore:
@@ -58,16 +55,16 @@ class PostStore:
                 break
         return result
 
-    def delete(self,id):
-        for post in PostStore.posts:
-            if post.id == id:
-                PostStore.posts.remove(post)
-                print "Post deleted with success"
-                break
+    def delete(self, id):
+        post = self.get_by_id(id)
+        if post is None:
             print "post doesn't exist"
-
-    def entity_exists(self,post):
-        if post in PostStore.posts:
-            print "Post exist"
         else:
-            print "Post doesn't exist"
+            PostStore.posts.remove(post)
+            print "Post Deleted with success"
+
+    def entity_exists(self, post):
+        result = True
+        if self.get_by_id(post.id) is None:
+            result = False
+        return result
