@@ -20,18 +20,21 @@ class MemberStore:
         return result
 
     def delete(self, id):
-        for member in MemberStore.members:
-            if member.id == id:
-                MemberStore.members.remove(member)
-                print "Member Deleted with success"
-                break
+        member = self.get_by_id(id)
+        if member is None:
             print "Member doesn't exist"
+        else:
+            MemberStore.members.remove(member)
+            print "Member Deleted with success"
+
 
     def entity_exists(self, member):
-        if member in MemberStore.members:
-            print "Member exist"
-        else:
-            print "Member doesn't exist"
+        result = True
+        if self.get_by_id(member.id) is None:
+            result = False
+        return result
+
+
 
 
 class PostStore:

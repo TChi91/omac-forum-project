@@ -50,7 +50,7 @@ class ATM:
 atm1 = ATM("Smart Bank", 500)
 atm2 = ATM("Baraka Bank", 1000)
 
-atm1.withdraw(277)
+atm1.withdraw(5555)
 atm1.withdraw(100)
 atm1.withdraw(55)
 

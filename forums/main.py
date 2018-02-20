@@ -13,8 +13,20 @@ storeMember.add(member1)
 storeMember.add(member2)
 print storeMember.get_all()
 
-storePost = stores.PostStore()
-storePost.add(post1)
-storePost.add(post2)
-storePost.add(post3)
-print storePost.get_all()
+#storePost = stores.PostStore()
+#storePost.add(post1)
+#storePost.add(post2)
+#storePost.add(post3)
+#print storePost.get_all()
+
+print storeMember.get_by_id(1)
+#member3 = models.Member('moh', 43)
+#print storeMember.entity_exists(member3)
+
+#storeMember.add(member3)
+
+#print storeMember.entity_exists(member3)
+
+storeMember.delete(2)
+
+print storeMember.get_all()
