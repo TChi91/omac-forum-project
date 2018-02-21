@@ -11,7 +11,7 @@ class MemberStore:
             MemberStore.last_id += 1
 
     def get_by_id(self, id):
-        all_members = MemberStore.members
+        all_members = self.get_all()
         result = None
         for member in all_members:
             if member.id == id:
@@ -19,18 +19,33 @@ class MemberStore:
                 break
         return result
 
+    def get_by_name(self,name):
+        all_members = self.get_all()
+        result = None
+        for member in all_members:
+            if member.name == name:
+                result = name
+                break
+        return result
+
     def delete(self, id):
         member = self.get_by_id(id)
-        if member is None:
-            print "Member doesn't exist"
-        else:
-            MemberStore.members.remove(member)
-            print "Member Deleted with success"
+        MemberStore.members.remove(member)
+        print "Member Deleted with success"
 
     def entity_exists(self, member):
         result = True
         if self.get_by_id(member.id) is None:
             result = False
+        return result
+
+    def update(self, member):
+        result = member
+        all_members = self.get_all()
+        for index, current_member in enumerate(all_members):
+            if current_member.id == member.id:
+                all_members[index] = member
+                break
         return result
 
 
@@ -47,11 +62,20 @@ class PostStore:
         PostStore.last_id += 1
 
     def get_by_id(self,id):
-        all_posts = PostStore.posts
+        all_posts = self.get_all()
         result = None
         for post in all_posts:
             if post.id == id:
                 result = post
+                break
+        return result
+
+    def get_by_title(self,title):
+        all_posts = self.get_all()
+        result = None
+        for post in all_posts:
+            if post.title == title:
+                result = title
                 break
         return result
 
