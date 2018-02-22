@@ -1,3 +1,6 @@
+import copy, itertools
+
+
 class MemberStore:
     members = []
     last_id = 1
@@ -19,14 +22,17 @@ class MemberStore:
                 break
         return result
 
-    def get_by_name(self,name):
+    def get_by_name(self, name):
         all_members = self.get_all()
-        result = None
         for member in all_members:
             if member.name == name:
-                result = name
-                break
-        return result
+                yield member
+
+    def get_by_name2(self,name):
+        all_members = self.get_all()
+        return (member
+                for member in all_members
+                if member.name == name)
 
     def delete(self, id):
         member = self.get_by_id(id)
@@ -46,7 +52,17 @@ class MemberStore:
             if current_member.id == member.id:
                 all_members[index] = member
                 break
-        return result
+        #return result
+
+    def get_members_with_posts(self, all_posts):
+        all_members = copy.deepcopy(self.get_all())
+        for member, post in itertools.product(all_members, all_posts):
+            if member.id == post.member_id:
+                member.posts.append(post)
+        for member in all_members:
+            yield member
+
+
 
 
 class PostStore:
