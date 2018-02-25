@@ -1,3 +1,5 @@
+from time import sleep
+
 import models
 import stores
 
@@ -24,6 +26,13 @@ def store_should_get_members_by_name(members_store):
     print_a_list(members_by_name_retrieved)
     print("=" * 30)
 
+def stores_should_get_posts_by_date(posts_store):
+
+    print("*" * 30)
+    print("Getting by date:")
+    posts_by_date_retrieved = posts_store.get_posts_by_date()
+    print_a_list(posts_by_date_retrieved)
+
 
 def get_by_id_should_retrieve_same_object(store, member2):
     print "< get_by_id fuction TEST >"
@@ -48,6 +57,20 @@ def update_should_modify_object(member_store, member3):
     print(member_store.get_by_id(member3.id))
     print("=" * 30)
 
+
+def update_should_modify_post(post_store, post3):
+    print "< update post fuction TEST >"
+    post3_copy = models.Post(post3.title, post3.content)
+    post3_copy.id = 3
+
+    if post3_copy is not post3:
+        print("post3 and post3_copy are not the same !")
+
+    print(post3_copy)
+    post3_copy.title = "tiw tiw tiw"
+    post_store.update(post3_copy)
+    print(post_store.get_by_id(member3.id))
+    print("=" * 30)
 
 def catch_exception_when_deleting():
     print "< Delete fuction TEST >"
@@ -108,13 +131,21 @@ def print_all_members(members_store):
 def create_posts(members_instances):
     print "< Create posts >"
     post1 = models.Post("Agriculture", "Agriculture is amazing", members_instances[0].id)
+    sleep(2)
     post2 = models.Post("Engineering", "I love engineering", members_instances[0].id)
+    sleep(2)
     post3 = models.Post("Medicine", "Medicine is great", members_instances[1].id)
+    sleep(2)
     post4 = models.Post("Architecture", "Spectacular art", members_instances[1].id)
+    sleep(2)
     post5 = models.Post("Astronomy", "Space is awesome", members_instances[1].id)
+    sleep(2)
     post6 = models.Post("Geology", "Earth is our friend", members_instances[2].id)
+    sleep(2)
     post7 = models.Post("ComputerSci", "Our passion", members_instances[2].id)
+    sleep(2)
     post8 = models.Post("Algorithms", "Yeah, more of that", members_instances[2].id)
+    sleep(2)
     post9 = models.Post("Operating Systems", "Ewww", members_instances[2].id)
 
     print(post1)
@@ -168,5 +199,6 @@ stores_should_get_members_with_posts(members_store, posts_store)
 
 stores_should_get_top_two(members_store, posts_store)
 
+update_should_modify_post(posts_store,post3)
 
-
+stores_should_get_posts_by_date(posts_store)

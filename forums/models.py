@@ -1,3 +1,5 @@
+import datetime
+
 class Member:
     def __init__(self, name, age):
         self.name = name
@@ -14,6 +16,6 @@ class Post:
         self.content = content
         self.id = 0
         self.member_id = member_id
-
+        self.date = datetime.datetime.now()
     def __str__ (self):
-        return 'member_id: {}, title :{},content: {}, id: {}'.format(self.member_id, self.title, self.content, self.id)
+        return 'member_id: {}, title :{},content: {}, id: {}, date:{}'.format(self.member_id, self.title, self.content, self.id, self.date)
