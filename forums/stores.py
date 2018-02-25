@@ -9,9 +9,9 @@ class MemberStore:
         return MemberStore.members
 
     def add(self, member):
-            member.id = MemberStore.last_id
-            MemberStore.members.append(member)
-            MemberStore.last_id += 1
+        member.id = MemberStore.last_id
+        MemberStore.members.append(member)
+        MemberStore.last_id += 1
 
     def get_by_id(self, id):
         all_members = self.get_all()
@@ -28,7 +28,7 @@ class MemberStore:
             if member.name == name:
                 yield member
 
-    def get_by_name2(self,name):
+    def get_by_name2(self, name):
         all_members = self.get_all()
         return (member
                 for member in all_members
@@ -52,7 +52,8 @@ class MemberStore:
             if current_member.id == member.id:
                 all_members[index] = member
                 break
-        #return result
+
+    # 'return result
 
     def get_members_with_posts(self, all_posts):
         all_members = copy.deepcopy(self.get_all())
@@ -62,7 +63,10 @@ class MemberStore:
         for member in all_members:
             yield member
 
-
+    def get_top_two(self, posts_store):
+        all_members = self.get_members_with_posts(posts_store)
+        all_members = sorted(all_members, key = lambda member: member.posts, reverse=True)
+        return all_members[:2]
 
 
 class PostStore:
@@ -77,7 +81,7 @@ class PostStore:
         PostStore.posts.append(post)
         PostStore.last_id += 1
 
-    def get_by_id(self,id):
+    def get_by_id(self, id):
         all_posts = self.get_all()
         result = None
         for post in all_posts:
@@ -86,7 +90,7 @@ class PostStore:
                 break
         return result
 
-    def get_by_title(self,title):
+    def get_by_title(self, title):
         all_posts = self.get_all()
         result = None
         for post in all_posts:

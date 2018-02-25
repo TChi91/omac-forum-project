@@ -58,6 +58,26 @@ def catch_exception_when_deleting():
     print("=" * 30)
 
 
+def stores_should_get_members_with_posts(member_store, post_store):
+    members_with_posts = member_store.get_members_with_posts(post_store.get_all())
+
+    for member_with_posts in members_with_posts:
+        print("{} has posts:".format(member_with_posts))
+        for post in member_with_posts.posts:
+            print("{}".format(post))
+
+        print("=" * 10)
+
+
+def stores_should_get_top_two(member_store, post_store):
+    top_two_members = member_store.get_top_two(post_store.get_all())
+
+    for member_with_posts in top_two_members:
+        print("{} has posts:".format(member_with_posts))
+        for post in member_with_posts.posts:
+            print("{}".format(post))
+
+
 def create_members():
     print "< Create members >"
     member1 = models.Member("Fethi", 26)
@@ -143,3 +163,10 @@ update_should_modify_object(members_store, member3)
 catch_exception_when_deleting()
 
 store_should_get_members_by_name(members_store)
+
+stores_should_get_members_with_posts(members_store, posts_store)
+
+stores_should_get_top_two(members_store, posts_store)
+
+
+
