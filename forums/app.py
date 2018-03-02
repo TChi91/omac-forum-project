@@ -1,13 +1,15 @@
-from flask import Flask, render_template
-from dummy_data import post_store
+from flask import Flask
+import dummy_data
+import stores
 
 app = Flask(__name__)
 
+from views import *
 
-@app.route("/index")
-@app.route("/")
-def home():
-    posts = post_store.get_all()
-    return render_template("index.html", posts = posts)
+member_store = stores.MemberStore()
+post_store = stores.PostStore()
 
-app.run()
+
+if __name__ == "__main__":
+    dummy_data.seed_stores(member_store, post_store)
+    app.run()
